@@ -21,7 +21,7 @@ extension NSBezierPath {
             let path: CGMutablePath = CGMutablePath()
             let points: NSPointArray = NSPointArray.allocate(capacity: 3)
             var didClosePath: Bool = true
-            
+        
             for index in 0..<numElements {
                 switch (self.element(at: index, associatedPoints:points)) {
                 case .moveTo:

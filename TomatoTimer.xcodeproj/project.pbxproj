@@ -12,9 +12,10 @@
 		B73C82082168DE420081717E /* TomatoTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73C82072168DE420081717E /* TomatoTimer.swift */; };
 		B797F94E2178D34100879471 /* NSBezierPath+ BezierPathQuartzUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B797F94D2178D34100879471 /* NSBezierPath+ BezierPathQuartzUtilities.swift */; };
 		B7AC6165215F94F500DA75D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC6164215F94F500DA75D8 /* AppDelegate.swift */; };
-		B7AC6167215F94F500DA75D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC6166215F94F500DA75D8 /* ViewController.swift */; };
+		B7AC6167215F94F500DA75D8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC6166215F94F500DA75D8 /* MainViewController.swift */; };
 		B7AC6169215F94F700DA75D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7AC6168215F94F700DA75D8 /* Assets.xcassets */; };
 		B7AC616C215F94F700DA75D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7AC616A215F94F700DA75D8 /* Main.storyboard */; };
+		B7B4BA68217A3B8E009B6CB8 /* UIDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B4BA67217A3B8E009B6CB8 /* UIDefine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,11 +25,12 @@
 		B797F94D2178D34100879471 /* NSBezierPath+ BezierPathQuartzUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSBezierPath+ BezierPathQuartzUtilities.swift"; sourceTree = "<group>"; };
 		B7AC6161215F94F500DA75D8 /* TomatoTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TomatoTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7AC6164215F94F500DA75D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B7AC6166215F94F500DA75D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B7AC6166215F94F500DA75D8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B7AC6168215F94F700DA75D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B7AC616B215F94F700DA75D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B7AC616D215F94F700DA75D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B7AC616E215F94F700DA75D8 /* TomatoTimer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TomatoTimer.entitlements; sourceTree = "<group>"; };
+		B7B4BA67217A3B8E009B6CB8 /* UIDefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDefine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,18 +63,35 @@
 		B7AC6163215F94F500DA75D8 /* TomatoTimer */ = {
 			isa = PBXGroup;
 			children = (
+				B7B4BA66217A342A009B6CB8 /* Util */,
+				B7B4BA65217A3409009B6CB8 /* MainUI */,
 				B7AC6164215F94F500DA75D8 /* AppDelegate.swift */,
-				B7AC6166215F94F500DA75D8 /* ViewController.swift */,
 				B7AC6168215F94F700DA75D8 /* Assets.xcassets */,
-				B7AC616A215F94F700DA75D8 /* Main.storyboard */,
 				B7AC616D215F94F700DA75D8 /* Info.plist */,
 				B7AC616E215F94F700DA75D8 /* TomatoTimer.entitlements */,
-				B73C81FF2168D8A70081717E /* StatusMenuController.swift */,
-				B73C82012168DD840081717E /* MainWindowController.swift */,
 				B73C82072168DE420081717E /* TomatoTimer.swift */,
-				B797F94D2178D34100879471 /* NSBezierPath+ BezierPathQuartzUtilities.swift */,
 			);
 			path = TomatoTimer;
+			sourceTree = "<group>";
+		};
+		B7B4BA65217A3409009B6CB8 /* MainUI */ = {
+			isa = PBXGroup;
+			children = (
+				B7AC6166215F94F500DA75D8 /* MainViewController.swift */,
+				B73C82012168DD840081717E /* MainWindowController.swift */,
+				B73C81FF2168D8A70081717E /* StatusMenuController.swift */,
+				B7B4BA67217A3B8E009B6CB8 /* UIDefine.swift */,
+				B7AC616A215F94F700DA75D8 /* Main.storyboard */,
+			);
+			path = MainUI;
+			sourceTree = "<group>";
+		};
+		B7B4BA66217A342A009B6CB8 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				B797F94D2178D34100879471 /* NSBezierPath+ BezierPathQuartzUtilities.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,9 +166,10 @@
 			files = (
 				B73C82082168DE420081717E /* TomatoTimer.swift in Sources */,
 				B73C82002168D8A70081717E /* StatusMenuController.swift in Sources */,
-				B7AC6167215F94F500DA75D8 /* ViewController.swift in Sources */,
+				B7AC6167215F94F500DA75D8 /* MainViewController.swift in Sources */,
 				B73C82022168DD840081717E /* MainWindowController.swift in Sources */,
 				B7AC6165215F94F500DA75D8 /* AppDelegate.swift in Sources */,
+				B7B4BA68217A3B8E009B6CB8 /* UIDefine.swift in Sources */,
 				B797F94E2178D34100879471 /* NSBezierPath+ BezierPathQuartzUtilities.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
