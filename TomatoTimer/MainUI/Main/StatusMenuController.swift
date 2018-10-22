@@ -22,9 +22,13 @@ class StatusMenuController: NSObject {
     fileprivate let statusItem =  NSStatusBar.system.statusItem(withLength: StatusMenuProgressRadius*2)
 
     override func awakeFromNib() {
+        
+        //action时间与下拉菜单不能共存m，下拉菜单优先
+        //        statusItem.button?.target = self
+        //        statusItem.button?.action = #selector(StatusMenuController.showTimerManagerr)
+        
         statusItem.button?.title = ""
         statusItem.menu = statusMenu
-    
         progressAnimate()
         
         TomatoTimer.shared().statusMenuController = self

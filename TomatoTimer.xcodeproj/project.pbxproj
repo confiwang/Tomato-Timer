@@ -11,11 +11,14 @@
 		B73C82022168DD840081717E /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73C82012168DD840081717E /* MainWindowController.swift */; };
 		B73C82082168DE420081717E /* TomatoTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73C82072168DE420081717E /* TomatoTimer.swift */; };
 		B797F94E2178D34100879471 /* NSBezierPath+ BezierPathQuartzUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B797F94D2178D34100879471 /* NSBezierPath+ BezierPathQuartzUtilities.swift */; };
+		B7A04679217C3BDE00FAF969 /* TimeUpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A04678217C3BDE00FAF969 /* TimeUpManager.swift */; };
+		B7A0467F217C3C4A00FAF969 /* ScreenMaskWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A0467E217C3C4A00FAF969 /* ScreenMaskWindowController.swift */; };
 		B7AC6165215F94F500DA75D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC6164215F94F500DA75D8 /* AppDelegate.swift */; };
 		B7AC6167215F94F500DA75D8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AC6166215F94F500DA75D8 /* MainViewController.swift */; };
 		B7AC6169215F94F700DA75D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7AC6168215F94F700DA75D8 /* Assets.xcassets */; };
 		B7AC616C215F94F700DA75D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7AC616A215F94F700DA75D8 /* Main.storyboard */; };
 		B7B4BA68217A3B8E009B6CB8 /* UIDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7B4BA67217A3B8E009B6CB8 /* UIDefine.swift */; };
+		B7EA52232180370A000CE966 /* ScreenMaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EA52222180370A000CE966 /* ScreenMaskViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +26,8 @@
 		B73C82012168DD840081717E /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		B73C82072168DE420081717E /* TomatoTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TomatoTimer.swift; sourceTree = "<group>"; };
 		B797F94D2178D34100879471 /* NSBezierPath+ BezierPathQuartzUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSBezierPath+ BezierPathQuartzUtilities.swift"; sourceTree = "<group>"; };
+		B7A04678217C3BDE00FAF969 /* TimeUpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUpManager.swift; sourceTree = "<group>"; };
+		B7A0467E217C3C4A00FAF969 /* ScreenMaskWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenMaskWindowController.swift; sourceTree = "<group>"; };
 		B7AC6161215F94F500DA75D8 /* TomatoTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TomatoTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7AC6164215F94F500DA75D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B7AC6166215F94F500DA75D8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -31,6 +36,7 @@
 		B7AC616D215F94F700DA75D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B7AC616E215F94F700DA75D8 /* TomatoTimer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TomatoTimer.entitlements; sourceTree = "<group>"; };
 		B7B4BA67217A3B8E009B6CB8 /* UIDefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDefine.swift; sourceTree = "<group>"; };
+		B7EA52222180370A000CE966 /* ScreenMaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenMaskViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +50,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B7A04675217C3B9F00FAF969 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				B7AC6166215F94F500DA75D8 /* MainViewController.swift */,
+				B73C82012168DD840081717E /* MainWindowController.swift */,
+				B73C81FF2168D8A70081717E /* StatusMenuController.swift */,
+				B7B4BA67217A3B8E009B6CB8 /* UIDefine.swift */,
+				B7AC616A215F94F700DA75D8 /* Main.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		B7A04676217C3BB500FAF969 /* TimeUp */ = {
+			isa = PBXGroup;
+			children = (
+				B7A04678217C3BDE00FAF969 /* TimeUpManager.swift */,
+				B7A0467E217C3C4A00FAF969 /* ScreenMaskWindowController.swift */,
+				B7EA52222180370A000CE966 /* ScreenMaskViewController.swift */,
+			);
+			path = TimeUp;
+			sourceTree = "<group>";
+		};
 		B7AC6158215F94F500DA75D8 = {
 			isa = PBXGroup;
 			children = (
@@ -77,11 +105,8 @@
 		B7B4BA65217A3409009B6CB8 /* MainUI */ = {
 			isa = PBXGroup;
 			children = (
-				B7AC6166215F94F500DA75D8 /* MainViewController.swift */,
-				B73C82012168DD840081717E /* MainWindowController.swift */,
-				B73C81FF2168D8A70081717E /* StatusMenuController.swift */,
-				B7B4BA67217A3B8E009B6CB8 /* UIDefine.swift */,
-				B7AC616A215F94F700DA75D8 /* Main.storyboard */,
+				B7A04676217C3BB500FAF969 /* TimeUp */,
+				B7A04675217C3B9F00FAF969 /* Main */,
 			);
 			path = MainUI;
 			sourceTree = "<group>";
@@ -164,11 +189,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7A0467F217C3C4A00FAF969 /* ScreenMaskWindowController.swift in Sources */,
 				B73C82082168DE420081717E /* TomatoTimer.swift in Sources */,
 				B73C82002168D8A70081717E /* StatusMenuController.swift in Sources */,
 				B7AC6167215F94F500DA75D8 /* MainViewController.swift in Sources */,
+				B7EA52232180370A000CE966 /* ScreenMaskViewController.swift in Sources */,
 				B73C82022168DD840081717E /* MainWindowController.swift in Sources */,
 				B7AC6165215F94F500DA75D8 /* AppDelegate.swift in Sources */,
+				B7A04679217C3BDE00FAF969 /* TimeUpManager.swift in Sources */,
 				B7B4BA68217A3B8E009B6CB8 /* UIDefine.swift in Sources */,
 				B797F94E2178D34100879471 /* NSBezierPath+ BezierPathQuartzUtilities.swift in Sources */,
 			);

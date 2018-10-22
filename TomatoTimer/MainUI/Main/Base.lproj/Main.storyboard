@@ -727,7 +727,7 @@
                         </connections>
                     </window>
                     <connections>
-                        <outlet property="mainWindow" destination="IQv-IB-iLA" id="Ilr-db-yCc"/>
+                        <outlet property="mainWindow" destination="IQv-IB-iLA" id="XeU-yA-j30"/>
                         <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
                     </connections>
                 </windowController>
@@ -744,7 +744,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tg9-Co-uhh">
-                                <rect key="frame" x="118" y="95" width="244" height="61"/>
+                                <rect key="frame" x="118" y="72" width="244" height="61"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="25:00" id="jVb-vN-u8k">
                                     <font key="font" metaFont="system" size="50"/>
@@ -753,7 +753,7 @@
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k3L-gg-JBb">
-                                <rect key="frame" x="43" y="59" width="120" height="32"/>
+                                <rect key="frame" x="53" y="27" width="120" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <buttonCell key="cell" type="push" title="Start Timmer" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="3v1-FN-Upp">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -763,8 +763,12 @@
                                     <action selector="startTimmer:" target="XfG-lQ-9wD" id="YRp-gH-D0d"/>
                                 </connections>
                             </button>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Ro-yo-dYn">
+                                <rect key="frame" x="178" y="146" width="124" height="124"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
+                            </customView>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ytQ-eo-UoR">
-                                <rect key="frame" x="325" y="59" width="118" height="32"/>
+                                <rect key="frame" x="307" y="27" width="118" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <buttonCell key="cell" type="push" title="Stop Timmer" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="On3-g1-gxK">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -774,10 +778,6 @@
                                     <action selector="stopTimmer:" target="XfG-lQ-9wD" id="v95-Wk-6b1"/>
                                 </connections>
                             </button>
-                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Ro-yo-dYn">
-                                <rect key="frame" x="178" y="146" width="124" height="124"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </customView>
                         </subviews>
                     </view>
                     <connections>
@@ -788,6 +788,50 @@
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="655"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="Zx4-rZ-L8L">
+            <objects>
+                <windowController storyboardIdentifier="screenMaskWindow" id="Sie-mF-PgM" customClass="ScreenMaskWindowController" customModule="TomatoTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hasShadow="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="FvW-VY-JoQ">
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="245" y="301" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <connections>
+                            <outlet property="delegate" destination="Sie-mF-PgM" id="uE2-g5-0iS"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <outlet property="screenMaskWindow" destination="FvW-VY-JoQ" id="VHv-N7-X0h"/>
+                        <segue destination="6a5-QZ-kaD" kind="relationship" relationship="window.shadowedContentViewController" id="SZu-bu-UZ4"/>
+                    </connections>
+                </windowController>
+                <customObject id="qzK-Ts-dIe" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="647" y="400"/>
+        </scene>
+        <!--Screen Mask View Controller-->
+        <scene sceneID="f94-mB-4a6">
+            <objects>
+                <viewController id="6a5-QZ-kaD" customClass="ScreenMaskViewController" customModule="TomatoTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="jtx-lx-RBl">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9i5-C5-3w4">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="Rnb-nt-1x9"/>
+                            </imageView>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="9i5-C5-3w4" id="R8f-bM-oeN"/>
+                    </connections>
+                </viewController>
+                <customObject id="QS2-1c-ctf" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1286" y="454"/>
         </scene>
     </scenes>
 </document>

@@ -40,20 +40,26 @@ class MainViewController: NSViewController {
     
     @IBAction func stopTimmer(_ sender: Any) {
             
-        if playTimer != nil{
-            playTimer.invalidate()
-            playTimer = nil
-        }
-        TomatoTimer.shared().statusMenuController.stopTomatoTimmer()
+        stopTimmer();
     }
     
     @objc func startTomatoTimerWork() -> Void {
-        lastTimeTextField.stringValue = String(format: "%02d:%02d", currentTime/60, currentTime%60)
+        
+        if (currentTime == 0) {
+            let result = TimeUpManager.shared().estopScreen()
+            if (result) {
+                
+            }
+            stopTimmer();
+            return
+        }
+        
         currentTime = currentTime-1
         progressLayer.strokeEnd = CGFloat(currentTime)/tomatoWorkTime
         if (progressLayer.strokeEnd < 0) {
             progressLayer.strokeEnd = 1
         }
+        lastTimeTextField.stringValue = String(format: "%02d:%02d", currentTime/60, currentTime%60)
     }
     
     func progressAnimate() {
@@ -76,5 +82,15 @@ class MainViewController: NSViewController {
         progressLayer.strokeColor = NSColor.red.cgColor
         progressLayer.fillColor = NSColor.clear.cgColor
     }
+    
+    func stopTimmer() {
+        
+        if playTimer != nil{
+            playTimer.invalidate()
+            playTimer = nil
+        }
+        TomatoTimer.shared().statusMenuController.stopTomatoTimmer()
+    }
+    
 }
 
