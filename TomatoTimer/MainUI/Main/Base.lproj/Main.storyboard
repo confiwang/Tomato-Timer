@@ -793,7 +793,8 @@
         <scene sceneID="Zx4-rZ-L8L">
             <objects>
                 <windowController storyboardIdentifier="screenMaskWindow" id="Sie-mF-PgM" customClass="ScreenMaskWindowController" customModule="TomatoTimer" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hasShadow="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="FvW-VY-JoQ">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hasShadow="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="FvW-VY-JoQ">
+                        <windowStyleMask key="styleMask" titled="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="245" y="301" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
@@ -823,10 +824,30 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="Rnb-nt-1x9"/>
                             </imageView>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CNt-HR-XcW" customClass="CFTextField" customModule="TomatoTimer" customModuleProvider="target">
+                                <rect key="frame" x="150" y="111" width="181" height="22"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" alignment="center" drawsBackground="YES" id="0uZ-Ud-y2L">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p9q-qw-jHc">
+                                <rect key="frame" x="90" y="175" width="300" height="17"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="truncatingMiddle" allowsUndo="NO" alignment="center" title="Label" id="8S4-RT-8Nv">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="backgroundImageView" destination="9i5-C5-3w4" id="R8f-bM-oeN"/>
+                        <outlet property="greetingsTextField" destination="p9q-qw-jHc" id="4oD-jS-LtU"/>
+                        <outlet property="userGreetingInputTextField" destination="CNt-HR-XcW" id="4Bd-tu-zH1"/>
                     </connections>
                 </viewController>
                 <customObject id="QS2-1c-ctf" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
