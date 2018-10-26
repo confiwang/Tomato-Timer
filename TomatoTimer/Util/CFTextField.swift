@@ -13,12 +13,7 @@ typealias funcBlock = ()->()
 class CFTextField: NSTextField {
 
     var textDidChangeBlock:funcBlock? = nil
-    
-    override func draw(_ dirtyRect: NSRect) {
-        super.draw(dirtyRect)
 
-        // Drawing code here.
-    }
     
     override func textDidChange(_ notification: Notification) {
         if ((textDidChangeBlock) != nil) {

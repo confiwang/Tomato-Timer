@@ -1,4 +1,4 @@
-#   Tomato - Timer
+#   番茄时钟(Swift版)
 ##  第一版
 ####    实现的功能
 1. 倒计时
@@ -6,3 +6,8 @@
 3. 系统状态栏添加timmer进度展示
 4. 时间耗尽展示提示窗口(桌面全屏截图，只响应esc事件)
 5. 输入文字退出锁屏时刻（block使用）
+6. 使用Masnory布局view（swift调用oc）
+####    如何运行
+1. 进入⁨TomatoTimer⁩ ▸ ⁨TomatoTimer⁩找到Podfile
+2. 打开终端，执行pod install
+3. 打开TomatoTimer.xcworkspace编译运行

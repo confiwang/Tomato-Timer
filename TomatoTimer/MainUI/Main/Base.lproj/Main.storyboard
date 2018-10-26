@@ -824,20 +824,20 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="Rnb-nt-1x9"/>
                             </imageView>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CNt-HR-XcW" customClass="CFTextField" customModule="TomatoTimer" customModuleProvider="target">
-                                <rect key="frame" x="150" y="111" width="181" height="22"/>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CNt-HR-XcW" customClass="CFTextField" customModule="TomatoTimer" customModuleProvider="target">
+                                <rect key="frame" x="161" y="89" width="181" height="40"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" alignment="center" drawsBackground="YES" id="0uZ-Ud-y2L">
-                                    <font key="font" metaFont="system"/>
+                                    <font key="font" metaFont="system" size="35"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p9q-qw-jHc">
-                                <rect key="frame" x="90" y="175" width="300" height="17"/>
+                                <rect key="frame" x="90" y="137" width="322" height="55"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <textFieldCell key="cell" lineBreakMode="truncatingMiddle" allowsUndo="NO" alignment="center" title="Label" id="8S4-RT-8Nv">
-                                    <font key="font" metaFont="system"/>
+                                    <font key="font" metaFont="system" size="50"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
