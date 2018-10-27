@@ -20,7 +20,7 @@ class StatusMenuController: NSObject {
     
     //显示程序在系统状态栏
     fileprivate let statusItem =  NSStatusBar.system.statusItem(withLength: StatusMenuProgressRadius*2)
-
+    
     override func awakeFromNib() {
         
         //action时间与下拉菜单不能共存m，下拉菜单优先
@@ -41,10 +41,12 @@ class StatusMenuController: NSObject {
     
     @IBAction func restartTimer(_ sender: NSMenuItem) {
         startTomatoTimmer()
+        TomatoTimer.shared().mainViewController.startTimmer(self)
     }
     
     @IBAction func stopTimer(_ sender: NSMenuItem) {
         stopTomatoTimmer()
+        TomatoTimer.shared().mainViewController.stopTimmer(self)
     }
     
     @IBAction func showTimerManager(_ sender: NSMenuItem) {
@@ -57,7 +59,6 @@ class StatusMenuController: NSObject {
         playTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(startTomatoTimerWork), userInfo: nil, repeats: true)
         currentTime = Int(tomatoWorkTime)
         playTimer.fire()
-        
     }
     
     func stopTomatoTimmer() {
@@ -69,7 +70,7 @@ class StatusMenuController: NSObject {
     }
     
     @objc func startTomatoTimerWork() -> Void {
-       
+        
         currentTime = currentTime-1
         statusProgressLayer.strokeEnd = CGFloat(currentTime)/tomatoWorkTime
         if (statusProgressLayer.strokeEnd < 0) {

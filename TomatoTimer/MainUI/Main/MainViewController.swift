@@ -21,14 +21,15 @@ class MainViewController: NSViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         progressAnimate()
+        TomatoTimer.shared().mainViewController = self
     }
-
+    
     override var representedObject: Any? {
         didSet {
-        // Update the view, if already loaded.
+            // Update the view, if already loaded.
         }
     }
-
+    
     @IBAction func startTimmer(_ sender: Any) {
         if playTimer == nil {
             playTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(startTomatoTimerWork), userInfo: nil, repeats: true)
@@ -39,8 +40,11 @@ class MainViewController: NSViewController {
     }
     
     @IBAction func stopTimmer(_ sender: Any) {
-            
-        stopTimmer();
+        if playTimer != nil{
+            playTimer.invalidate()
+            playTimer = nil
+        }
+        TomatoTimer.shared().statusMenuController.stopTomatoTimmer()
     }
     
     @objc func startTomatoTimerWork() -> Void {
@@ -50,7 +54,7 @@ class MainViewController: NSViewController {
             if (result) {
                 
             }
-            stopTimmer();
+            stopTimmer(self);
             return
         }
         
@@ -68,9 +72,9 @@ class MainViewController: NSViewController {
         progressLayer.frame = progressView.bounds.insetBy(dx: 10, dy: 10)
         progressView.wantsLayer = true
         progressView.layer?.addSublayer(progressLayer)
-
+        
         let onePath = NSBezierPath()
-
+        
         onePath.appendArc(withCenter: NSZeroPoint, radius: MainViewControllerProgressRadius, startAngle: 0, endAngle: 360)
         onePath.transform(using: AffineTransform (rotationByDegrees: MainViewControllerProgressRotateDegrees))
         onePath.transform(using: AffineTransform (translationByX: progressLayer.frame.width/2, byY: progressLayer.frame.height/2))
@@ -81,15 +85,6 @@ class MainViewController: NSViewController {
         progressLayer.strokeEnd = 1
         progressLayer.strokeColor = NSColor.red.cgColor
         progressLayer.fillColor = NSColor.clear.cgColor
-    }
-    
-    func stopTimmer() {
-        
-        if playTimer != nil{
-            playTimer.invalidate()
-            playTimer = nil
-        }
-        TomatoTimer.shared().statusMenuController.stopTomatoTimmer()
     }
     
 }

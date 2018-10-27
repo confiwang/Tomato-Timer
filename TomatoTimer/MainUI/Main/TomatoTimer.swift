@@ -9,13 +9,14 @@
 import Cocoa
 
 class TomatoTimer: NSObject {
-
+    
     var mainWindow: NSWindow!
     var statusMenuController: StatusMenuController!
+    var mainViewController: MainViewController!
     
     private static let sharedManager: TomatoTimer = {
         let shared = TomatoTimer()
-
+        
         return shared
     }()
     
