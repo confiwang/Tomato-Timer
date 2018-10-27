@@ -8,15 +8,14 @@
 
 import Cocoa
 
-
-
 class StatusMenuController: NSObject {
     
     @IBOutlet weak var statusMenu: NSMenu!
-    fileprivate var statusProgressLayer: CAShapeLayer!
+    fileprivate var statusProgressLayer: CYStatusBarProgressShapeLayer!
     fileprivate var playTimer: Timer!
     fileprivate var currentTime: Int = 0
-    fileprivate var tomatoWorkTime: CGFloat = DefaultWorkTime
+    fileprivate var tomatoWorkTime: Int = DefaultWorkTime
+    fileprivate var finishAngle: CGFloat = 0
     
     //显示程序在系统状态栏
     fileprivate let statusItem =  NSStatusBar.system.statusItem(withLength: StatusMenuProgressRadius*2)
@@ -29,7 +28,15 @@ class StatusMenuController: NSObject {
         
         statusItem.button?.title = ""
         statusItem.menu = statusMenu
-        progressAnimate()
+        finishAngle = CGFloat(ProgressBeginAngle)
+        
+        statusProgressLayer = CYStatusBarProgressShapeLayer()
+        statusProgressLayer.frame = (statusItem.button?.bounds)!
+        statusProgressLayer.finishAngle = 0
+        statusProgressLayer.contentsScale = (NSScreen.main?.backingScaleFactor)!
+        statusItem.button?.wantsLayer = true
+        statusItem.button?.layer?.addSublayer(statusProgressLayer)
+        statusProgressLayer.display()
         
         TomatoTimer.shared().statusMenuController = self
     }
@@ -69,32 +76,12 @@ class StatusMenuController: NSObject {
         }
     }
     
-    @objc func startTomatoTimerWork() -> Void {
-        
+    @objc func startTomatoTimerWork() {
+    
         currentTime = currentTime-1
-        statusProgressLayer.strokeEnd = CGFloat(currentTime)/tomatoWorkTime
-        if (statusProgressLayer.strokeEnd < 0) {
-            statusProgressLayer.strokeEnd = 1
-        }
+        statusProgressLayer.finishAngle = 360.0*(CGFloat(tomatoWorkTime-currentTime)/CGFloat(tomatoWorkTime))
+        //调用drawrect绘制
+        statusProgressLayer.setNeedsDisplay()
     }
     
-    func progressAnimate() {
-        
-        statusProgressLayer = CAShapeLayer()
-        statusProgressLayer.frame = (statusItem.button?.bounds)!
-        statusItem.button?.wantsLayer = true
-        statusItem.button?.layer?.addSublayer(statusProgressLayer)
-        let onePath = NSBezierPath()
-        
-        onePath.appendArc(withCenter: NSZeroPoint, radius: StatusMenuProgressRadius-StatusMenuProgressLineWidth, startAngle: 0, endAngle: 360)
-        onePath.transform(using: AffineTransform (rotationByDegrees: StatusMenuProgressRotateDegrees))
-        onePath.transform(using: AffineTransform (translationByX: statusProgressLayer.frame.width/2, byY: statusProgressLayer.frame.height/2))
-        
-        statusProgressLayer.path = onePath.quartzPath()
-        statusProgressLayer.lineWidth = StatusMenuProgressLineWidth
-        statusProgressLayer.strokeStart = 0
-        statusProgressLayer.strokeEnd = 1
-        statusProgressLayer.strokeColor = NSColor.red.cgColor
-        statusProgressLayer.fillColor = NSColor.clear.cgColor
-    }
 }

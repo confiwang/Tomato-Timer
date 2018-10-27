@@ -9,14 +9,17 @@
 import Foundation
 
 //Main
-let DefaultWorkTime: CGFloat = 1500
+let DefaultWorkTime: Int = 1500
 //StatusMenu
 let StatusMenuProgressLineWidth: CGFloat = 1
 let StatusMenuProgressRadius: CGFloat = 10
-let StatusMenuProgressRotateDegrees: CGFloat = 270
+let StatusMenuProgressRotateDegrees: CGFloat = CGFloat(Double.pi/2*3)
 
 
 //MainViewController
 let MainViewControllerProgressLineWidth: CGFloat = 3
 let MainViewControllerProgressRadius: CGFloat = 40
 let MainViewControllerProgressRotateDegrees: CGFloat = 90
+
+let ProgressBeginAngle = 0.0 // 起点
+let ProgressFinishAngle = 360.0 // 终点

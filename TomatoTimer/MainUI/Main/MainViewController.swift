@@ -15,7 +15,7 @@ class MainViewController: NSViewController {
     fileprivate var playTimer: Timer!
     fileprivate var currentTime: Int = 0
     fileprivate var progressLayer: CAShapeLayer!
-    fileprivate var tomatoWorkTime: CGFloat = DefaultWorkTime
+    fileprivate var tomatoWorkTime: Int = DefaultWorkTime
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,12 +31,15 @@ class MainViewController: NSViewController {
     }
     
     @IBAction func startTimmer(_ sender: Any) {
-        if playTimer == nil {
-            playTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(startTomatoTimerWork), userInfo: nil, repeats: true)
-            currentTime = Int(tomatoWorkTime)
-            playTimer.fire()
-            TomatoTimer.shared().statusMenuController.startTomatoTimmer()
+        
+        if ((playTimer) != nil) {
+            playTimer.invalidate()
+            playTimer = nil
         }
+        playTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(startTomatoTimerWork), userInfo: nil, repeats: true)
+        currentTime = Int(tomatoWorkTime)
+        playTimer.fire()
+        TomatoTimer.shared().statusMenuController.startTomatoTimmer()
     }
     
     @IBAction func stopTimmer(_ sender: Any) {
@@ -59,7 +62,8 @@ class MainViewController: NSViewController {
         }
         
         currentTime = currentTime-1
-        progressLayer.strokeEnd = CGFloat(currentTime)/tomatoWorkTime
+        progressLayer.strokeEnd = CGFloat(currentTime)/CGFloat(tomatoWorkTime)
+        
         if (progressLayer.strokeEnd < 0) {
             progressLayer.strokeEnd = 1
         }

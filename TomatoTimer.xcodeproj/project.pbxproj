@@ -11,6 +11,7 @@
 		B73C82002168D8A70081717E /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73C81FF2168D8A70081717E /* StatusMenuController.swift */; };
 		B73C82022168DD840081717E /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73C82012168DD840081717E /* MainWindowController.swift */; };
 		B73C82082168DE420081717E /* TomatoTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73C82072168DE420081717E /* TomatoTimer.swift */; };
+		B7895A28218425B500A360EC /* CYStatusBarProgressShapeLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7895A27218425B500A360EC /* CYStatusBarProgressShapeLayer.swift */; };
 		B797F94E2178D34100879471 /* NSBezierPath+ BezierPathQuartzUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B797F94D2178D34100879471 /* NSBezierPath+ BezierPathQuartzUtilities.swift */; };
 		B7A04679217C3BDE00FAF969 /* TimeUpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A04678217C3BDE00FAF969 /* TimeUpManager.swift */; };
 		B7A0467F217C3C4A00FAF969 /* ScreenMaskWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A0467E217C3C4A00FAF969 /* ScreenMaskWindowController.swift */; };
@@ -31,6 +32,7 @@
 		B73C81FF2168D8A70081717E /* StatusMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
 		B73C82012168DD840081717E /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		B73C82072168DE420081717E /* TomatoTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TomatoTimer.swift; sourceTree = "<group>"; };
+		B7895A27218425B500A360EC /* CYStatusBarProgressShapeLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CYStatusBarProgressShapeLayer.swift; sourceTree = "<group>"; };
 		B797F94D2178D34100879471 /* NSBezierPath+ BezierPathQuartzUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSBezierPath+ BezierPathQuartzUtilities.swift"; sourceTree = "<group>"; };
 		B7A04678217C3BDE00FAF969 /* TimeUpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUpManager.swift; sourceTree = "<group>"; };
 		B7A0467E217C3C4A00FAF969 /* ScreenMaskWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenMaskWindowController.swift; sourceTree = "<group>"; };
@@ -67,15 +69,23 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		B7A04675217C3B9F00FAF969 /* Main */ = {
+		B7895A23218413FE00A360EC /* UIDefine */ = {
 			isa = PBXGroup;
 			children = (
 				B7B4BA67217A3B8E009B6CB8 /* UIDefine.swift */,
+			);
+			path = UIDefine;
+			sourceTree = "<group>";
+		};
+		B7A04675217C3B9F00FAF969 /* Main */ = {
+			isa = PBXGroup;
+			children = (
 				B73C82072168DE420081717E /* TomatoTimer.swift */,
 				B7AC6166215F94F500DA75D8 /* MainViewController.swift */,
 				B73C82012168DD840081717E /* MainWindowController.swift */,
 				B73C81FF2168D8A70081717E /* StatusMenuController.swift */,
 				B7AC616A215F94F700DA75D8 /* Main.storyboard */,
+				B7895A27218425B500A360EC /* CYStatusBarProgressShapeLayer.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -125,6 +135,7 @@
 		B7B4BA65217A3409009B6CB8 /* MainUI */ = {
 			isa = PBXGroup;
 			children = (
+				B7895A23218413FE00A360EC /* UIDefine */,
 				B7A04676217C3BB500FAF969 /* TimeUp */,
 				B7A04675217C3B9F00FAF969 /* Main */,
 			);
@@ -246,6 +257,7 @@
 			files = (
 				B7A0467F217C3C4A00FAF969 /* ScreenMaskWindowController.swift in Sources */,
 				B73C82082168DE420081717E /* TomatoTimer.swift in Sources */,
+				B7895A28218425B500A360EC /* CYStatusBarProgressShapeLayer.swift in Sources */,
 				B73C82002168D8A70081717E /* StatusMenuController.swift in Sources */,
 				B7AC6167215F94F500DA75D8 /* MainViewController.swift in Sources */,
 				B7EA52232180370A000CE966 /* ScreenMaskViewController.swift in Sources */,
