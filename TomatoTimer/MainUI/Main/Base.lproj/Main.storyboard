@@ -684,6 +684,9 @@
                 </customObject>
                 <menu id="qVU-I8-Cip">
                     <items>
+                        <menuItem title="Item" id="g3r-i8-BeM">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                        </menuItem>
                         <menuItem title="Restart" id="h5T-dW-QNL" userLabel="Restart">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
@@ -783,6 +786,7 @@
                     <connections>
                         <outlet property="lastTimeTextField" destination="Tg9-Co-uhh" id="5hQ-0t-Mbv"/>
                         <outlet property="progressView" destination="9Ro-yo-dYn" id="D37-fF-DDg"/>
+                        <outlet property="startTimerButton" destination="k3L-gg-JBb" id="ioV-I9-9dj"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

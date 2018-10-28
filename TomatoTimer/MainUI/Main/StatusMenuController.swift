@@ -38,6 +38,12 @@ class StatusMenuController: NSObject {
         statusItem.button?.layer?.addSublayer(statusProgressLayer)
         statusProgressLayer.display()
         
+        let currentTimeItem = statusMenu.item(at: 0)
+        currentTimeItem?.isHidden = true
+        
+        let startItem = statusMenu.item(at: 1)
+        startItem?.title = "Start"
+        
         TomatoTimer.shared().statusMenuController = self
     }
     
@@ -49,6 +55,12 @@ class StatusMenuController: NSObject {
     @IBAction func restartTimer(_ sender: NSMenuItem) {
         startTomatoTimmer()
         TomatoTimer.shared().mainViewController.startTimmer(self)
+        
+        let currentTimeItem = statusMenu.item(at: 0)
+        currentTimeItem?.isHidden = false
+        
+        let startItem = statusMenu.item(at: 1)
+        startItem?.title = "Restart"
     }
     
     @IBAction func stopTimer(_ sender: NSMenuItem) {
@@ -63,7 +75,7 @@ class StatusMenuController: NSObject {
     func startTomatoTimmer() {
         stopTomatoTimmer()
         
-        playTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(startTomatoTimerWork), userInfo: nil, repeats: true)
+        playTimer = Timer.scheduledTimer(timeInterval: TimeInterval(1/TomatoTimerSpeedup), target: self, selector: #selector(startTomatoTimerWork), userInfo: nil, repeats: true)
         currentTime = Int(tomatoWorkTime)
         playTimer.fire()
     }
@@ -74,6 +86,11 @@ class StatusMenuController: NSObject {
             playTimer.invalidate()
             playTimer = nil
         }
+        let currentTimeItem = statusMenu.item(at: 0)
+        currentTimeItem?.isHidden = true
+        
+        let startItem = statusMenu.item(at: 1)
+        startItem?.title = "Start"
     }
     
     @objc func startTomatoTimerWork() {
@@ -82,6 +99,9 @@ class StatusMenuController: NSObject {
         statusProgressLayer.finishAngle = 360.0*(CGFloat(tomatoWorkTime-currentTime)/CGFloat(tomatoWorkTime))
         //调用drawrect绘制
         statusProgressLayer.setNeedsDisplay()
+        
+        let currentTimeItem = statusMenu.item(at: 0)
+        currentTimeItem?.title = String(format: "%02d:%02d", currentTime/60, currentTime%60)
     }
     
 }

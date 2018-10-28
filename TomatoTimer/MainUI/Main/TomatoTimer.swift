@@ -13,6 +13,8 @@ class TomatoTimer: NSObject {
     var mainWindow: NSWindow!
     var statusMenuController: StatusMenuController!
     var mainViewController: MainViewController!
+    var tomatoTimerStatus: TomatoTimerStatus = .TomatoTimerOrigin
+    
     
     private static let sharedManager: TomatoTimer = {
         let shared = TomatoTimer()

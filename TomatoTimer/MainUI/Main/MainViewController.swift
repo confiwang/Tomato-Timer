@@ -12,6 +12,8 @@ class MainViewController: NSViewController {
     
     @IBOutlet weak var lastTimeTextField: NSTextField!
     @IBOutlet weak var progressView: NSView!
+    @IBOutlet weak var startTimerButton: NSButton!
+    
     fileprivate var playTimer: Timer!
     fileprivate var currentTime: Int = 0
     fileprivate var progressLayer: CAShapeLayer!
@@ -36,10 +38,13 @@ class MainViewController: NSViewController {
             playTimer.invalidate()
             playTimer = nil
         }
-        playTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(startTomatoTimerWork), userInfo: nil, repeats: true)
+        playTimer = Timer.scheduledTimer(timeInterval: TimeInterval(1/TomatoTimerSpeedup), target: self, selector: #selector(startTomatoTimerWork), userInfo: nil, repeats: true)
         currentTime = Int(tomatoWorkTime)
         playTimer.fire()
         TomatoTimer.shared().statusMenuController.startTomatoTimmer()
+        TomatoTimer.shared().tomatoTimerStatus = .TomatoTimerOriginRunning
+        startTimerButton.title = "Restart"
+        
     }
     
     @IBAction func stopTimmer(_ sender: Any) {
@@ -48,6 +53,8 @@ class MainViewController: NSViewController {
             playTimer = nil
         }
         TomatoTimer.shared().statusMenuController.stopTomatoTimmer()
+        TomatoTimer.shared().tomatoTimerStatus = .TomatoTimerStop
+        startTimerButton.title = "Start"
     }
     
     @objc func startTomatoTimerWork() -> Void {
@@ -64,10 +71,11 @@ class MainViewController: NSViewController {
         currentTime = currentTime-1
         progressLayer.strokeEnd = CGFloat(currentTime)/CGFloat(tomatoWorkTime)
         
-        if (progressLayer.strokeEnd < 0) {
+        if (progressLayer.strokeEnd <= 0) {
             progressLayer.strokeEnd = 1
         }
         lastTimeTextField.stringValue = String(format: "%02d:%02d", currentTime/60, currentTime%60)
+        progressLayer.setNeedsDisplay()
     }
     
     func progressAnimate() {

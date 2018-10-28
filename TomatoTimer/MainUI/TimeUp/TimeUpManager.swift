@@ -33,16 +33,18 @@ class TimeUpManager: NSObject {
     
     func estopScreen() -> Bool {
         
-        let screenFrame = NSScreen.main?.frame
-        let screenCGImage = CGDisplayCreateImage(CGMainDisplayID())
-        let screenImage: NSImage = NSImage(cgImage: screenCGImage!, size: (screenFrame?.size)!)
-        
-        let screenMaskViewController = screenMaskWindowController?.contentViewController as! ScreenMaskViewController
-        
-        screenMaskViewController.backgroundImageView.image = screenImage
-        
-        screenMaskWindowController?.window?.setFrame(screenFrame!, display: true)
-        screenMaskWindowController?.showWindow(self)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.5) {
+            let screenFrame = NSScreen.main?.frame
+            let screenCGImage = CGDisplayCreateImage(CGMainDisplayID())
+            let screenImage: NSImage = NSImage(cgImage: screenCGImage!, size: (screenFrame?.size)!)
+            
+            let screenMaskViewController = self.screenMaskWindowController?.contentViewController as! ScreenMaskViewController
+            
+            screenMaskViewController.backgroundImageView.image = screenImage
+            
+            self.screenMaskWindowController?.window?.setFrame(screenFrame!, display: true)
+            self.screenMaskWindowController?.showWindow(self)
+        }
         
         return true
     }

@@ -8,6 +8,7 @@
 5. 输入文字退出锁屏时刻（block使用）
 6. 使用Masnory布局view（swift调用oc）
 7. 仿iTimer系统状态栏圆形进度条实现
+8. 状态栏增加剩余时间显示
    
 ####    如何运行
 1. 进入⁨TomatoTimer⁩ ▸ ⁨TomatoTimer⁩找到Podfile
