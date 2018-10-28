@@ -1,6 +1,8 @@
 #   番茄时钟(Swift版)
 ##  第一版
-####    实现的功能
+
+ ![statusMenu](https://github.com/confiwang/Tomato-Timer/blob/master/statusMenu.png)
+ ####    实现的功能
 1. 倒计时
 2. 系统状态栏打开 / 关闭App
 3. 系统状态栏添加timer进度展示
