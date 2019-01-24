@@ -53,8 +53,8 @@ class StatusMenuController: NSObject {
     }
     
     @IBAction func restartTimer(_ sender: NSMenuItem) {
-        startTomatoTimmer()
-        TomatoTimer.shared().mainViewController.startTimmer(self)
+        startTomatoTimer()
+        TomatoTimer.shared().mainViewController.startTimer(self)
         
         let currentTimeItem = statusMenu.item(at: 0)
         currentTimeItem?.isHidden = false
@@ -64,23 +64,23 @@ class StatusMenuController: NSObject {
     }
     
     @IBAction func stopTimer(_ sender: NSMenuItem) {
-        stopTomatoTimmer()
-        TomatoTimer.shared().mainViewController.stopTimmer(self)
+        stopTomatoTimer()
+        TomatoTimer.shared().mainViewController.stopTimer(self)
     }
     
     @IBAction func showTimerManager(_ sender: NSMenuItem) {
         TomatoTimer.shared().mainWindow.makeKeyAndOrderFront(self)
     }
     
-    func startTomatoTimmer() {
-        stopTomatoTimmer()
+    func startTomatoTimer() {
+        stopTomatoTimer()
         
         playTimer = Timer.scheduledTimer(timeInterval: TimeInterval(1/TomatoTimerSpeedup), target: self, selector: #selector(startTomatoTimerWork), userInfo: nil, repeats: true)
         currentTime = Int(tomatoWorkTime)
         playTimer.fire()
     }
     
-    func stopTomatoTimmer() {
+    func stopTomatoTimer() {
         
         if playTimer != nil{
             playTimer.invalidate()

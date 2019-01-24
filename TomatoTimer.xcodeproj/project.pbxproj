@@ -69,6 +69,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B741EDDF21F9F2B9009C18E7 /* Reources */ = {
+			isa = PBXGroup;
+			children = (
+				B7AC6168215F94F700DA75D8 /* Assets.xcassets */,
+			);
+			path = Reources;
+			sourceTree = "<group>";
+		};
 		B7895A23218413FE00A360EC /* UIDefine */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +111,7 @@
 		B7AC6158215F94F500DA75D8 = {
 			isa = PBXGroup;
 			children = (
+				B741EDDF21F9F2B9009C18E7 /* Reources */,
 				B7AC6163215F94F500DA75D8 /* TomatoTimer */,
 				B7AC6162215F94F500DA75D8 /* Products */,
 				30348EB4B4F8A1488F50CCC0 /* Pods */,
@@ -124,7 +133,6 @@
 				B7B4BA66217A342A009B6CB8 /* Util */,
 				B7B4BA65217A3409009B6CB8 /* MainUI */,
 				B7AC6164215F94F500DA75D8 /* AppDelegate.swift */,
-				B7AC6168215F94F700DA75D8 /* Assets.xcassets */,
 				B7AC616D215F94F700DA75D8 /* Info.plist */,
 				B7AC616E215F94F700DA75D8 /* TomatoTimer.entitlements */,
 				B724557C21834C220001599E /* Header-Briding-Header.h */,

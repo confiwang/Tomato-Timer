@@ -24,6 +24,9 @@ class MainViewController: NSViewController {
         // Do any additional setup after loading the view.
         progressAnimate()
         TomatoTimer.shared().mainViewController = self
+        self.view.wantsLayer = true
+        self.view.layer?.contentsGravity = CALayerContentsGravity.resizeAspect
+        self.view.layer?.contents = NSImage(named: "background_chicken")
     }
     
     override var representedObject: Any? {
@@ -32,7 +35,7 @@ class MainViewController: NSViewController {
         }
     }
     
-    @IBAction func startTimmer(_ sender: Any) {
+    @IBAction func startTimer(_ sender: Any) {
         
         if ((playTimer) != nil) {
             playTimer.invalidate()
@@ -41,18 +44,18 @@ class MainViewController: NSViewController {
         playTimer = Timer.scheduledTimer(timeInterval: TimeInterval(1/TomatoTimerSpeedup), target: self, selector: #selector(startTomatoTimerWork), userInfo: nil, repeats: true)
         currentTime = Int(tomatoWorkTime)
         playTimer.fire()
-        TomatoTimer.shared().statusMenuController.startTomatoTimmer()
+        TomatoTimer.shared().statusMenuController.startTomatoTimer()
         TomatoTimer.shared().tomatoTimerStatus = .TomatoTimerOriginRunning
         startTimerButton.title = "Restart"
         
     }
     
-    @IBAction func stopTimmer(_ sender: Any) {
+    @IBAction func stopTimer(_ sender: Any) {
         if playTimer != nil{
             playTimer.invalidate()
             playTimer = nil
         }
-        TomatoTimer.shared().statusMenuController.stopTomatoTimmer()
+        TomatoTimer.shared().statusMenuController.stopTomatoTimer()
         TomatoTimer.shared().tomatoTimerStatus = .TomatoTimerStop
         startTimerButton.title = "Start"
     }
@@ -64,7 +67,7 @@ class MainViewController: NSViewController {
             if (result) {
                 
             }
-            stopTimmer(self);
+            stopTimer(self);
             return
         }
         
