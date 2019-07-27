@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14109"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -746,18 +746,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="500" height="385"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tg9-Co-uhh">
-                                <rect key="frame" x="118" y="72" width="264" height="61"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Tg9-Co-uhh">
+                                <rect key="frame" x="180" y="72" width="141" height="60"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="25:00" id="jVb-vN-u8k">
                                     <font key="font" metaFont="system" size="50"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k3L-gg-JBb">
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="k3L-gg-JBb">
                                 <rect key="frame" x="59" y="27" width="109" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <buttonCell key="cell" type="push" title="Start Timer" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="3v1-FN-Upp">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -766,13 +764,11 @@
                                     <action selector="startTimer:" target="XfG-lQ-9wD" id="YRp-gH-D0d"/>
                                 </connections>
                             </button>
-                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Ro-yo-dYn">
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="9Ro-yo-dYn">
                                 <rect key="frame" x="188" y="146" width="124" height="124"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
                             </customView>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ytQ-eo-UoR">
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ytQ-eo-UoR">
                                 <rect key="frame" x="333" y="27" width="107" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <buttonCell key="cell" type="push" title="Stop Timer" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="On3-g1-gxK">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -782,6 +778,21 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="9Ro-yo-dYn" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="188" id="0zM-kd-lI5"/>
+                            <constraint firstItem="ytQ-eo-UoR" firstAttribute="top" secondItem="Tg9-Co-uhh" secondAttribute="bottom" constant="17" id="97s-lB-Ei0"/>
+                            <constraint firstAttribute="bottom" secondItem="k3L-gg-JBb" secondAttribute="bottom" constant="34" id="AU0-dy-dzH"/>
+                            <constraint firstItem="ytQ-eo-UoR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="k3L-gg-JBb" secondAttribute="trailing" constant="12" symbolic="YES" id="AgT-2e-p0r"/>
+                            <constraint firstItem="k3L-gg-JBb" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="65" id="Rxg-q2-Uli"/>
+                            <constraint firstAttribute="bottom" secondItem="Tg9-Co-uhh" secondAttribute="bottom" constant="72" id="XvB-so-MbU"/>
+                            <constraint firstItem="k3L-gg-JBb" firstAttribute="top" secondItem="Tg9-Co-uhh" secondAttribute="bottom" constant="17" id="ZPo-by-j78"/>
+                            <constraint firstItem="9Ro-yo-dYn" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="115" id="b5Y-GH-Z0e"/>
+                            <constraint firstAttribute="trailing" secondItem="9Ro-yo-dYn" secondAttribute="trailing" constant="188" id="b69-YX-dYp"/>
+                            <constraint firstAttribute="trailing" secondItem="ytQ-eo-UoR" secondAttribute="trailing" constant="66" id="bl0-RN-UMA"/>
+                            <constraint firstItem="Tg9-Co-uhh" firstAttribute="top" secondItem="9Ro-yo-dYn" secondAttribute="bottom" constant="14" id="n91-OS-VF9"/>
+                            <constraint firstItem="Tg9-Co-uhh" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="wa4-Ju-gCM"/>
+                            <constraint firstAttribute="bottom" secondItem="ytQ-eo-UoR" secondAttribute="bottom" constant="34" id="z0C-Yu-OGb"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="lastTimeTextField" destination="Tg9-Co-uhh" id="5hQ-0t-Mbv"/>

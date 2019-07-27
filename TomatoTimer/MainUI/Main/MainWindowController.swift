@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class MainWindowController: NSWindowController {
+class MainWindowController: NSWindowController, NSWindowDelegate {
 
     @IBOutlet weak var mainWindow: NSWindow!
     
@@ -19,5 +19,8 @@ class MainWindowController: NSWindowController {
         
         TomatoTimer.shared().mainWindow = mainWindow
     }
-
+    
+    func windowDidResize(_ notification: Notification) {
+        NotificationCenter.default.post(name: CFFtomatoManagerWindowDidResize, object: nil)
+    }
 }

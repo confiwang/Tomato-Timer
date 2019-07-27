@@ -27,6 +27,7 @@ class MainViewController: NSViewController {
         self.view.wantsLayer = true
         self.view.layer?.contentsGravity = kCAGravityResizeAspect
         self.view.layer?.contents = NSImage(named: NSImage.Name(rawValue: "background_chicken"))
+        NotificationCenter.default.addObserver(self, selector: #selector(MainViewController.tomatoWindowDidResize(notification:)), name: CFFtomatoManagerWindowDidResize, object: nil)
     }
     
     override var representedObject: Any? {
@@ -84,13 +85,15 @@ class MainViewController: NSViewController {
     func progressAnimate() {
         
         progressLayer = CAShapeLayer()
-        progressLayer.frame = progressView.bounds.insetBy(dx: 10, dy: 10)
+        progressLayer.frame = progressView.bounds.insetBy(dx: 0, dy: 0)
         progressView.wantsLayer = true
         progressView.layer?.addSublayer(progressLayer)
         
         let onePath = NSBezierPath()
+        let radius = progressLayer.frame.width/2-MainViewControllerProgressLineWidth > 0
+        ? progressLayer.frame.width/2-MainViewControllerProgressLineWidth:1
         
-        onePath.appendArc(withCenter: NSZeroPoint, radius: MainViewControllerProgressRadius, startAngle: 0, endAngle: 360)
+        onePath.appendArc(withCenter: NSZeroPoint, radius: radius, startAngle: 0, endAngle: 360)
         onePath.transform(using: AffineTransform (rotationByDegrees: MainViewControllerProgressRotateDegrees))
         onePath.transform(using: AffineTransform (translationByX: progressLayer.frame.width/2, byY: progressLayer.frame.height/2))
         
@@ -102,5 +105,20 @@ class MainViewController: NSViewController {
         progressLayer.fillColor = NSColor.clear.cgColor
     }
     
+    @objc func tomatoWindowDidResize(notification: NSNotification) {
+        progressLayer.frame.size = progressView.frame.size
+        
+        let onePath = NSBezierPath()
+        let radius = min(progressLayer.frame.width, progressLayer.frame.height)/2-MainViewControllerProgressLineWidth*2 > 0
+            ? min(progressLayer.frame.width, progressLayer.frame.height)/2-MainViewControllerProgressLineWidth*2:1
+        
+        onePath.appendArc(withCenter: NSZeroPoint, radius: radius, startAngle: 0, endAngle: 360)
+        onePath.transform(using: AffineTransform (rotationByDegrees: MainViewControllerProgressRotateDegrees))
+        onePath.transform(using: AffineTransform (translationByX: progressLayer.frame.width/2, byY: progressLayer.frame.height/2))
+        
+        progressLayer.path = onePath.quartzPath()
+        progressLayer.setNeedsDisplay()
+        
+    }
 }
 

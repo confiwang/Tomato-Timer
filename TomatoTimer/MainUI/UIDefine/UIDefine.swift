@@ -24,10 +24,11 @@ let StatusMenuProgressRotateDegrees: CGFloat = CGFloat(Double.pi/2*3)
 
 //MainViewController
 let MainViewControllerProgressLineWidth: CGFloat = 3
-let MainViewControllerProgressRadius: CGFloat = 40
 let MainViewControllerProgressRotateDegrees: CGFloat = 90
 
 let ProgressBeginAngle = 0.0 // 起点
 let ProgressFinishAngle = 360.0 // 终点
 
 let TomatoTimerSpeedup = 1 //加速时间流转
+
+let CFFtomatoManagerWindowDidResize = Notification.Name("tomatoManagerWindowDidResize")
