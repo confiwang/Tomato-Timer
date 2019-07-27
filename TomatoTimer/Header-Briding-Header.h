@@ -10,5 +10,7 @@
 #define Header_Briding_Header_h
 
 #import "Masonry.h"
+#import "CYTomatoTimerEventObjects.h"
+#import "TomatoTimerEventDB.h"
 
 #endif /* Header_Briding_Header_h */

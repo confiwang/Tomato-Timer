@@ -4,4 +4,5 @@ project '../TomatoTimer.xcodeproj'
 
 target 'TomatoTimer' do
 	pod 'Masonry'
+	pod 'WCDB'
 end
