@@ -25,8 +25,8 @@ class TimeUpManager: NSObject {
     override init() {
         super.init()
         
-        let ScreenMaskStoryBoard = NSStoryboard(name: "Main", bundle: nil)
-        screenMaskWindowController = ScreenMaskStoryBoard.instantiateController(withIdentifier: "screenMaskWindow") as? ScreenMaskWindowController
+        let ScreenMaskStoryBoard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
+        screenMaskWindowController = ScreenMaskStoryBoard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "screenMaskWindow")) as? ScreenMaskWindowController
         
         
     }

@@ -24,24 +24,24 @@ extension NSBezierPath {
         
             for index in 0..<numElements {
                 switch (self.element(at: index, associatedPoints:points)) {
-                case .moveTo:
+                case NSBezierPath.ElementType.moveToBezierPathElement:
                     path.move(to: points[0])
                     didClosePath = false;
                     break;
                     
-                case .lineTo:
+                case NSBezierPath.ElementType.lineToBezierPathElement:
                     path.addLine(to: points[0])
                     
                     didClosePath = false;
                     break;
                     
-                case .curveTo:
+                case NSBezierPath.ElementType.curveToBezierPathElement:
                     path.addCurve(to: points[2], control1: points[0], control2: points[1])
                     
                     didClosePath = false;
                     break;
                     
-                case .closePath:
+                case NSBezierPath.ElementType.closePathBezierPathElement:
                     path.closeSubpath();
                     didClosePath = true;
                     break;

@@ -25,8 +25,8 @@ class MainViewController: NSViewController {
         progressAnimate()
         TomatoTimer.shared().mainViewController = self
         self.view.wantsLayer = true
-        self.view.layer?.contentsGravity = CALayerContentsGravity.resizeAspect
-        self.view.layer?.contents = NSImage(named: "background_chicken")
+        self.view.layer?.contentsGravity = kCAGravityResizeAspect
+        self.view.layer?.contents = NSImage(named: NSImage.Name(rawValue: "background_chicken"))
     }
     
     override var representedObject: Any? {
